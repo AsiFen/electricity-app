@@ -55,9 +55,10 @@ topupNowBtn.addEventListener('click', () => {
 
 })
 useNowBtn.addEventListener('click', () => {
-    var radioTopUp = document.querySelector('.input[name="useElectricity"]:checked')
+    var radioTopUp = document.querySelector('input[name="useElectricity"]:checked')
     if (radioTopUp) {
         var appliance = radioTopUp.value
+        console.log(appliance);
 
         electricity.useAppliance(appliance)
 

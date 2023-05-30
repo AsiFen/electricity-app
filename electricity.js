@@ -10,6 +10,7 @@ function Electricity() {
     function topUpElectricity(amount) {
         var count = 0
         if (advanceTook == true) {
+            amount = amount - amountOwed
             amountOwed = amountOwed - amount
             // unitsAvailable += 0
             if (amountOwed == 0) {
@@ -20,6 +21,9 @@ function Electricity() {
                 amount = amountOwed * -1
                 advanceTook = false
             }
+            // alert(amountOwed)
+            // alert(amount)
+
         }
         if (amount == 10) {
             unitsAvailable += 7
@@ -47,8 +51,6 @@ function Electricity() {
                 advanceTook = true
             }
         }
-
-
     }
 
     function getUnitsAvailable() {
