@@ -48,7 +48,6 @@ topupNowBtn.addEventListener('click', () => {
                 advanceTaken.classList.remove('hidden')
             }, 2000);
             
-
             advanceTaken.innerHTML = electricity.advanceTaken()
             localStorage['advanceTaken'] = electricity.advanceTaken()
         }

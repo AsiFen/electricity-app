@@ -1,3 +1,16 @@
+// return the available units 
+//return the units bought 
+//retrun the total amount spent
+// create variable to keep track of total amount spent
+//create variable to keep track of total units bought
+//top-up electricity when amount is 10, 20 , 50 with 7, 14, 35 respectively
+//if an advance is taken return true 
+//advance repayments take off from the the top up 
+//amount owed - amount
+// an advance must be taken once at a time
+// is appliance  is selected their corresponding price must be dedudcted from the units availables
+
+
 function Electricity() {
     var unitsAvailable = 0
     var advanceTook = ''
@@ -13,23 +26,20 @@ function Electricity() {
                 advanceTook = false
             }
 
-            //   
             if (amount > amountOwed) {
                 amount = amount - amountOwed
+                amountOwed = amountOwed - amount
+
                 advanceTook = false
 
             }
             if (amountOwed > amount) {
-                amountOwed = amountOwed - amount  
+                amountOwed = amountOwed - amount
                 amount = 0   // unitsAvailable += 0
                 advanceTook = true
 
             }
-            // if (amountOwed < 0) {
-            //     amount = amountOwed * -1
-            // }
-            console.log(amountOwed)
-            console.log(amount)
+          
         }
         if (amount == 10) {
             unitsAvailable += 7
