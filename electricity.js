@@ -39,7 +39,7 @@ function Electricity() {
                 advanceTook = true
 
             }
-          
+
         }
         if (amount == 10) {
             unitsAvailable += 7
@@ -56,11 +56,12 @@ function Electricity() {
             unitsAvailable += 35
             amountSpent += 50
             unitsBought += 35
-
         }
         if (!advanceTook) {
             if (amount == 'advance') {
                 // if (advanceTook[amount] === undefined) {
+                amountSpent += 30
+                unitsBought += 21
                 unitsAvailable += 21
                 amountOwed = 30
                 advanceTook = true
