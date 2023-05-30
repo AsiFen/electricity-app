@@ -103,4 +103,5 @@ if (getAdvanceTaken) {
     if (getUnitsBought) {
         totalUnits.innerHTML = getUnitsBought
     }
+    
 }
