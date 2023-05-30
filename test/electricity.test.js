@@ -72,7 +72,11 @@ describe("The buy electricity app", function () {
         const electricity = Electricity();
 
         electricity.topUpElectricity('advance');
+        assert.equal(21, electricity.getUnitsAvailable());
+
         electricity.topUpElectricity(50);
+        assert.equal(35, electricity.getUnitsAvailable());
+
         electricity.topUpElectricity('advance');
 
         assert.equal(56, electricity.getUnitsAvailable());
@@ -124,10 +128,10 @@ describe("The buy electricity app", function () {
 
         assert.isTrue(electricity.useAppliance('TV'));
         assert.equal(4, electricity.getUnitsAvailable());
-        
+
         assert.isFalse(electricity.useAppliance('Stove'));
         assert.equal(4, electricity.getUnitsAvailable());
-        
+
         assert.isTrue(electricity.useAppliance('TV'));
         assert.equal(1, electricity.getUnitsAvailable());
 
@@ -157,9 +161,9 @@ describe("The buy electricity app", function () {
 
     });
 
-    it("should calculate the total amount spent", function() {
+    it("should calculate the total amount spent", function () {
         const electricity = Electricity();
-        
+
         // electricity.topUpElectricity(20);  // 14
         electricity.topUpElectricity(10);  // 7
         electricity.topUpElectricity(50);  // 35
@@ -168,7 +172,7 @@ describe("The buy electricity app", function () {
         assert.equal(80, electricity.totalAmountSpent());
     });
 
-    it("should calculate the total amount units bought", function() {
+    it("should calculate the total amount units bought", function () {
         const electricity = Electricity();
 
         electricity.topUpElectricity(20);  // 14
