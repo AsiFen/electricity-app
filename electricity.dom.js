@@ -46,6 +46,7 @@ topupNowBtn.addEventListener('click', () => {
             setTimeout(() => {
                 advanceTaken.classList.remove('hidden')
             }, 2000);
+
             advanceTaken.classList.add('hidden')
 
             advanceTaken.innerHTML = electricity.advanceTaken()
@@ -89,6 +90,17 @@ if (getTotalAmount) {
 if (getUnitsBought) {
     totalUnits.innerHTML = getUnitsBought
 }
+
 if (getAdvanceTaken) {
     advanceTaken.innerHTML = getAdvanceTaken
+
+    if (getUnits) {
+        unitsAvailableElem.innerHTML = getUnits
+    }
+    if (getTotalAmount) {
+        totalAmount.innerHTML = getTotalAmount
+    }
+    if (getUnitsBought) {
+        totalUnits.innerHTML = getUnitsBought
+    }
 }

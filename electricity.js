@@ -8,22 +8,28 @@ function Electricity() {
     // let appliances = ['stove', 'kettle', 'TV', 'fridge']
 
     function topUpElectricity(amount) {
-        var count = 0
         if (advanceTook == true) {
-            amount = amount - amountOwed
-            amountOwed = amountOwed - amount
-            // unitsAvailable += 0
             if (amountOwed == 0) {
                 advanceTook = false
             }
 
-            if (amountOwed < 0) {
-                amount = amountOwed * -1
+            //   
+            if (amount > amountOwed) {
+                amount = amount - amountOwed
                 advanceTook = false
-            }
-            // alert(amountOwed)
-            // alert(amount)
 
+            }
+            if (amountOwed > amount) {
+                amountOwed = amountOwed - amount  
+                amount = 0   // unitsAvailable += 0
+                advanceTook = true
+
+            }
+            // if (amountOwed < 0) {
+            //     amount = amountOwed * -1
+            // }
+            console.log(amountOwed)
+            console.log(amount)
         }
         if (amount == 10) {
             unitsAvailable += 7
@@ -42,7 +48,6 @@ function Electricity() {
             unitsBought += 35
 
         }
-
         if (!advanceTook) {
             if (amount == 'advance') {
                 // if (advanceTook[amount] === undefined) {
